@@ -131,7 +131,7 @@ let
         --pg-config ${lib.getDev postgresql}/bin/pg_config \
         ${maybeDebugFlag} \
         --features "${builtins.concatStringsSep " " buildFeatures}" \
-        ${builtins.concatStringsSep " " cargoBuildFlags} \
+        ${builtins.concatStringsSep " " cargoPackageFlags} \
         --out-dir "$out"
 
       ${maybeLeaveBuildAndTestSubdir}
