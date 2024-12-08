@@ -147,14 +147,14 @@ let
       echo "Executing buildPgrxExtension install"
 
       ${maybeEnterBuildAndTestSubdir}
-
+echo "Executing buildPgrxExtension install222"
       cargo-pgrx pgrx stop all
-
+echo "Executing buildPgrxExtension install333"
       mv $out/${postgresql}/* $out
       rm -rf $out/nix
-
+echo "Executing buildPgrxExtension install444"
       ${maybeLeaveBuildAndTestSubdir}
-
+echo "Executing buildPgrxExtension install5555"
       runHook postInstall
     '';
 
