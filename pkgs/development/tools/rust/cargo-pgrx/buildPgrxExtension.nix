@@ -148,7 +148,8 @@ let
 
       ${maybeEnterBuildAndTestSubdir}
 echo "Executing buildPgrxExtension install222"
-      cargo-pgrx pgrx stop all
+      cargo-pgrx pgrx stop all \
+      ${builtins.concatStringsSep " " cargoPackageFlags}
 echo "Executing buildPgrxExtension install333"
       mv $out/${postgresql}/* $out
       rm -rf $out/nix
