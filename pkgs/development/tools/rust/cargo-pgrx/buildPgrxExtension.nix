@@ -123,6 +123,7 @@ let
         --pg-config ${postgresql}/bin/pg_config \
         ${maybeDebugFlag} \
         --features "${builtins.concatStringsSep " " buildFeatures}" \
+        ${builtins.concatStringsSep " " cargoPackageFlags} \
         --out-dir "$out"
 
       ${maybeLeaveBuildAndTestSubdir}
@@ -139,7 +140,8 @@ let
 
       ${maybeEnterBuildAndTestSubdir}
 
-      cargo-pgrx pgrx stop all
+      cargo-pgrx pgrx stop all \
+      ${builtins.concatStringsSep " " cargoPackageFlags}
 
       mv $out/${postgresql}/* $out
       rm -rf $out/nix
