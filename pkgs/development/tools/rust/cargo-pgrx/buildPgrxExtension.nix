@@ -51,6 +51,7 @@
 , buildType ? "release"
 , buildFeatures ? [ ]
 , cargoBuildFlags ? [ ]
+, cargoPackageFlags ? [ ]
 , postgresql
 # cargo-pgrx calls rustfmt on generated bindings, this is not strictly necessary, so we avoid the
 # dependency here. Set to false and provide rustfmt in nativeBuildInputs, if you need it, e.g.
